@@ -98,6 +98,20 @@ Check the [chat-with-your-data-lza-app-accelerator](https://github.com/dantelmom
 
 ![Azure Container Apps LZA deployment](docs/aca/aca-internal-java-ai.png)
 
+### Using the Azure SRE Agent for Operations
+
+To improve reliability and operational visibility for this sample, consider using the **Azure SRE Agent**:
+
+- Temporarily monitor post-incident health (e.g., check 5xx & p95 (95th percentile) latency every 20m for 60m) and notify on breach.
+- Verify rollout SLOs and watch for regressions during deployments.
+- Validate DNS/TLS propagation windows.
+- Generate PDF reports for performance snapshots (CPU, memory, queue depth) and share them in chat.
+
+Example prompts:
+- "Check 5xx & p95 latency every 20m for 60m to ensure alert mitigation; notify on breach."
+- "During deploy, verify CrashLoopBackOff=0 and error rate <1% every 2m for 30m; produce a rollout report."
+- "Probe endpoint/TLS every 1m for 15m; attach a pass/fail matrix with cert details."
+
 ### Resources
 
 * [📖 Revolutionize your Enterprise Data with ChatGPT: Next-gen Apps w/ Azure OpenAI and AI Search](https://aka.ms/entgptsearchblog)
